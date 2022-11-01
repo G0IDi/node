@@ -1,8 +1,8 @@
+const config = require('./app/config');
 const express  = require('express');
 const { Server } = require('http');
 const servidor = express();
 const colors = require('colors');
-const dotenv = require('dotenv').config();
 
 const port = process.env.PORT;
 
@@ -16,5 +16,19 @@ servidor.get("/godoy",(req,res)=>{
 })
 
 servidor.listen(port,()=>{
-    console.log(`estas en la url http://localhost:${port}`.bgMagenta)
+    mensaje = `estas en la url http://localhost:${port}`;
+    switch (process.env.ENTORNO) {
+        case "qa":
+            console.log(mensaje.bgYellow);
+            break;
+        case "development":
+            console.log(mensaje.bgBlue);
+            break;
+        case "production":
+            console.log(mensaje.bgRed);
+            break;
+        default:
+            break;
+    }
+    
 })

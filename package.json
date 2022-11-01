@@ -8,14 +8,24 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index.js"
+    "dev": " set ENTORNO=development& nodemon index.js",
+    "qa" : "set ENTORNO=qa& nodemon index.js",
+    "start": "set ENTORNO=production& node index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "description": "",
   "devDependencies": {
     "colors": "^1.4.0",
     "nodemon": "^2.0.20"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/G0IDi/node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/G0IDi/node/issues"
+  },
+  "homepage": "https://github.com/G0IDi/node#readme",
+  "description": ""
 }
